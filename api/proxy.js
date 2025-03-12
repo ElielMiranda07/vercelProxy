@@ -1,6 +1,14 @@
 import fetch from "node-fetch";
 
 export default async (req, res) => {
+  // Configura los encabezados CORS
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://elielmiranda07.github.io"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
   try {
     const response = await fetch(
       "https://api.football-data.org/v4/matches?status=LIVE",
